@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <img src="/homens.jpg" alt="homens.pt">
+  <main>
+    <img src="/homens.jpg" alt="homens.pt">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped></style>
