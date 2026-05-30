@@ -1,11 +1,13 @@
 import App from '@/App.vue'
+import Home from '@/Home.vue'
 import Post from '@/Post.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
-    { name: 'home', path: '/home', component: Post },
+    { name: 'post', path: '/home', component: Post },
+    { name: 'home', path: '/', component: Home },
   ],
 })
 
