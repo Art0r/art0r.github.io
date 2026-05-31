@@ -12,7 +12,7 @@ async function loadContent() {
   if (!slug || Array.isArray(slug)) return;
   
   try {
-    const file = await fetch(`/posts/${slug}`);
+    const file = await fetch(`/src/content/posts/${slug}`);
     const text = await file.text();
     const parsedContent = await marked.parse(text);
     content.value = DOMPurify.sanitize(parsedContent);

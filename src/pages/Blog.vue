@@ -6,9 +6,9 @@ const posts = ref<String[]>([]);
 const router = useRouter();
 
 onMounted(async () => {
-    const modules = import.meta.glob('/public/posts/*.md', { as: 'raw', eager: false });
+    const modules = import.meta.glob('/src/content/posts/*.md', { query: '?raw', eager: false });
     for (const mod in modules) { 
-        posts.value.push(mod.replace('/public/posts/', ''));
+        posts.value.push(mod.replace('/src/content/posts/', ''));
     }
 });
 
