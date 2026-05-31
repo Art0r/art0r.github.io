@@ -23,6 +23,9 @@ importers:
       vue-router:
         specifier: ^5.0.4
         version: 5.1.0(@vue/compiler-sfc@3.5.35)(pinia@3.0.4(typescript@6.0.3)(vue@3.5.35(typescript@6.0.3)))(vite@8.0.14(@types/node@24.12.4)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+      webdirlist:
+        specifier: ^1.0.6
+        version: 1.0.6
     devDependencies:
       '@tsconfig/node24':
         specifier: ^24.0.4
@@ -795,6 +798,9 @@ packages:
     resolution: {integrity: sha512-smsWv2LzFjP03xmvFoJ331ss6h+jixfA4UUV/Bsiyuu4YJPfN+FIQGOIiv4w9/+MoHkfkJ22UIaQWRVFRfH6Vw==}
     engines: {node: '>=20'}
 
+  path-browserify-esm@1.0.6:
+    resolution: {integrity: sha512-9nUwYvvu/yq1PYrUyYCihNWmpzacaRYF6gGbjLWErrZ4MRDWyfPN7RpE8E7tsw8eqBU/rr7mcoTXbS+Vih8uUA==}
+
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
 
@@ -1053,6 +1059,10 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  webdirlist@1.0.6:
+    resolution: {integrity: sha512-A5h+EGo/P+uOFXu3cEAlaOcln+g0Mlr07ELdN3gLDZe6bf++EilfX7EixW+h7NEuJia17/llEBe9ClCIJ5b4DA==}
+    hasBin: true
 
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
@@ -1817,6 +1827,8 @@ snapshots:
       powershell-utils: 0.1.0
       wsl-utils: 0.3.1
 
+  path-browserify-esm@1.0.6: {}
+
   path-browserify@1.0.1: {}
 
   path-key@3.1.1: {}
@@ -2061,6 +2073,10 @@ snapshots:
       '@vue/shared': 3.5.35
     optionalDependencies:
       typescript: 6.0.3
+
+  webdirlist@1.0.6:
+    dependencies:
+      path-browserify-esm: 1.0.6
 
   webpack-virtual-modules@0.6.2: {}
 
