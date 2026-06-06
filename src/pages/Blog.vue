@@ -6,18 +6,18 @@ const posts = ref<String[]>([]);
 const router = useRouter();
 
 onMounted(async () => {
-    const modules = import.meta.glob('/src/content/posts/*.md', { query: '?raw', eager: false });
-    for (const mod in modules) { 
-        posts.value.push(mod.replace('/src/content/posts/', ''));
-    }
+  const modules = import.meta.glob('/public/content/posts/*.md', { query: '?raw', eager: false });
+  for (const mod in modules) {
+    posts.value.push(mod.replace('/public/content/posts/', ''));
+  }
 });
 
 </script>
 <template>
-    <div v-for="[i, post] in posts.entries()" :key="i">
-        <button v-on:click="() => {
-            router.push(`/blog/post/${post}`);
-        }">{{ post }}</button>
-    </div>
+  <div v-for="[i, post] in posts.entries()" :key="i">
+    <button v-on:click="() => {
+      router.push(`/blog/post/${post}`);
+    }">{{ post }}</button>
+  </div>
 </template>
 <style scoped></style>
