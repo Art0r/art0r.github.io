@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import Post from '@/components/Post.vue';
+import { useBlogStore } from '@/stores/blog';
 import { onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
 
 const posts = ref<String[]>([]);
-const router = useRouter();
+const store = useBlogStore();
 
 onMounted(async () => {
   const modules = import.meta.glob('/public/content/posts/*.md', { query: '?raw', eager: false });
@@ -15,9 +16,11 @@ onMounted(async () => {
 </script>
 <template>
   <div v-for="[i, post] in posts.entries()" :key="i">
-    <button v-on:click="() => {
-      router.push(`/blog/post/${post}`);
+    <button v-on:click="async () => {
+      await store.changeSelectedPost(post);
     }">{{ post }}</button>
   </div>
+  <Post />
+
 </template>
 <style scoped></style>
