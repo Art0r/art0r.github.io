@@ -1,22 +1,9 @@
 <script setup lang="ts">
-import Post from '@/components/Post.vue';
 import { useBlogStore } from '@/stores/blog';
-import { onMounted } from 'vue';
-
-const store = useBlogStore();
-
-onMounted(async () => {
-  await store.getPosts();
-});
-
+const blogStore = useBlogStore();
 </script>
 <template>
-  <div v-for="post in store.posts">
-    <button v-on:click="async () => {
-      await store.changeSelectedPost(post);
-    }">{{ post }}</button>
-  </div>
-  <Post />
-
+  <h1>Meu Post</h1>
+  <div v-html="blogStore.selectedPostContent"></div>
 </template>
 <style scoped></style>
